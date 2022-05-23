@@ -1,6 +1,8 @@
 <script>
   import Modal from "./Modal.svelte";
 
+  let showModal = false;
+
   let people = [
     { name: "yoshi", beltColor: "black", age: 25, id: 1 },
     { name: "mario", beltColor: "red", age: 33, id: 2 },
@@ -13,9 +15,18 @@
   };
 
   let num = 5;
+
+  const toggleModal = () => {
+    showModal = !showModal;
+  };
 </script>
 
-<Modal message="sign up for offers" isPromo />
+<Modal
+  message="sign up for offers"
+  isPromo
+  {showModal}
+  on:click={toggleModal}
+/>
 
 {#if num > 20}
   <p>greater than 20</p>
@@ -25,6 +36,7 @@
   <p>num is less than 5</p>
 {/if}
 <main>
+  <button on:click={toggleModal}>Open Modal</button>
   {#each people as person (person.id)}
     <!-- person.id is the key -->
     <div>

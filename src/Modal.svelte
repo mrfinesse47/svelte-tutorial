@@ -1,12 +1,12 @@
 <script>
   export let message = "default value"; //says its being set outside of  modal
   //you assigm it  to a  default if need be
-  let showModal = true;
+  export let showModal = false;
   export let isPromo = false;
 </script>
 
 {#if showModal}
-  <div class="backdrop">
+  <div class="backdrop" on:click>
     <div class="modal" class:promo={isPromo}><p>{message}</p></div>
     <!-- the class: adds classes conditionally -->
   </div>
