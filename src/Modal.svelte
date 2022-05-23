@@ -6,7 +6,8 @@
 </script>
 
 {#if showModal}
-  <div class="backdrop" on:click>
+  <div class="backdrop" on:click|self>
+    <!-- can use event modifiers to specify handlers actions -->
     <div class="modal" class:promo={isPromo}><p>{message}</p></div>
     <!-- the class: adds classes conditionally -->
   </div>

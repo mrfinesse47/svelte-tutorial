@@ -36,7 +36,8 @@
   <p>num is less than 5</p>
 {/if}
 <main>
-  <button on:click={toggleModal}>Open Modal</button>
+  <button on:click|once={toggleModal}>Open Modal</button>
+  <!-- even here we can specify once on the onclick event -->
   {#each people as person (person.id)}
     <!-- person.id is the key -->
     <div>
