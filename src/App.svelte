@@ -1,10 +1,24 @@
 <script>
-	export let name;
+	let name = "Kevin";
+	let beltColor = "black";
+
+	const handleClick =()=>{
+		beltColor = "orange"
+	}
+
+	const handleInput = (e)=>{
+		beltColor = e.target.value;
+	}
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
 	<p>Hello Ninjas</p>
+	<p style="color:{beltColor}">you have a {beltColor} belt</p>
+	<button on:click={handleClick}>update belt color</button>
+	<!-- <input type="text" on:input={handleInput} value={beltColor}> -->
+	<!-- equivalent  -->
+	<input type="text" bind:value={beltColor}>
 </main>
 
 <style>
