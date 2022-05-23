@@ -15,7 +15,7 @@
   let num = 5;
 </script>
 
-<Modal />
+<Modal message="sign up for offers" isPromo />
 
 {#if num > 20}
   <p>greater than 20</p>
