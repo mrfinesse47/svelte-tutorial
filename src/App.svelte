@@ -10,6 +10,15 @@
     { name: "luigi", beltColor: "green", age: 29, id: 3 },
   ];
 
+  const addPerson = (e) => {
+    // console.log(e.detail); //it comes back on e.detail
+    // people.push(e.detail); //wont work because svelte looks for reassignment
+    const person = e.detail;
+    people = [person, ...people]; //you have to totally reassign,
+    // also watch for having it the same pointer  people=people.push(person) didnt work
+    showModal = false; //will trigger another update cycle?
+  };
+
   const handleClick = ({ id }) => {
     //delete person  from people
     people = people.filter((p) => p.id !== id);
@@ -28,7 +37,7 @@
   {showModal}
   on:click={toggleModal}
 >
-  <AddPersonForm />
+  <AddPersonForm on:addPerson={addPerson} />
 </Modal>
 
 {#if num > 20}

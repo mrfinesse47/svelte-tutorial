@@ -1,4 +1,8 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+
+  let dispatch = createEventDispatcher(); //when we want to emit an event to a parent
+
   let name;
   let beltColor;
   let age;
@@ -8,8 +12,9 @@
   let skills = [];
 
   const handleSubmit = () => {
-    console.log(`name ${name}, color ${beltColor}, age ${age}`);
-    console.log(skills);
+    const person = { name, beltColor, age, skills, id: Math.random() };
+    //console.log(person);
+    dispatch("addPerson", person);
   };
 </script>
 
