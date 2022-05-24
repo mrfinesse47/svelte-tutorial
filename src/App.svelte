@@ -23,10 +23,17 @@
 
 <Modal
   message="sign up for offers"
-  isPromo
+  isPromo={false}
   {showModal}
   on:click={toggleModal}
-/>
+>
+  <h4>add a new person</h4>
+  <form>
+    <input type="text" placeholder="name" />
+    <input type="text" placeholder="belt color" />
+    <button>Add person</button>
+  </form>
+</Modal>
 
 {#if num > 20}
   <p>greater than 20</p>
