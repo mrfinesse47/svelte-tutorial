@@ -22,7 +22,7 @@
   <input type="text" placeholder="name" bind:value={name} />
   <input type="text" placeholder="belt color" bind:value={beltColor} />
   <input type="number" placeholder="age" bind:value={age} />
-  <label>Skills</label>
+  <h4>Skills</h4>
   <!-- <input type="checkbox" bind:checked={fighting} />fighting<br />
   <input type="checkbox" bind:checked={sneaking} />sneaking<br />
   <input type="checkbox" bind:checked={running} />running<br /> -->
